@@ -1,0 +1,5 @@
+/private-keys
+/private-keys/terraform-key.pem
+private-keys
+.t*
+terraform.tfst*

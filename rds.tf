@@ -6,7 +6,7 @@ resource "aws_db_instance" "rds_instance" {
   engine_version         = var.engine_version
   instance_class         = var.instance_class
   multi_az               = false
-  name                   = var.db_name
+  db_name                = "my_rds"
   username               = var.username
   password               = var.password
   skip_final_snapshot    = true
@@ -25,4 +25,11 @@ resource "aws_db_subnet_group" "my_rds" {
     Name = "My DB subnet group"
   }
 }
+
+# Enable for RDS Replica in another AZ
+
+# resource "aws_db_instance_automated_backups_replication" "default" {
+#   source_db_instance_arn = aws_db_instance.rds_instance.arn
+# }
+
 
